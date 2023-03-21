@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/57070be855.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Budgeteer</title>
+</head>
+<body class="bg-blueBg relative min-h-[100vh] flex flex-col justify-between">
+  <nav class="relative mx-auto bg-blueGrey p-4 w-full">
+    <div class="flex justify-center items-center w-full text-plain font-sans font-extrabold text-xl capitalize">budgeteer</div>
+  </nav>
+
+  <div class="flex flex-col space-y-10 p-5 md:flex-row md:space-y-0 md:space-x-10 md:justify-center h-[100%]">
+  
+    <div class="md:w-1/2 lg:w-2/5">
+      <div class="p-3 bg-blueGrey rounded-md text-plain text-xl font-sans font-extrabold capitalize">budget spreadsheets</div>
+
+      <ul id="budget-list" class="mt-4 space-y-2">
+        
+      </ul>
+      
+      <div class="flex space-x-1 mt-5 items-center">
+        <div class="bg-success addList rounded-full flex items-center justify-center h-9 w-9 p-1 scale-75 hover:bg-successHov hover:cursor-pointer">
+          <i class="addList fa-solid fa-plus text-plain text-[16px]"></i>
+        </div>
+        <span class="text-ice addList text-lg font-semibold hover:cursor-pointer">add spreadsheet</span>
+    </div>
+    </div>
+
+    <!-- WishList -->
+
+    <div class="flex flex-col space-y-5 md:w-1/2 lg:w-[35%]">
+      <div class="flex flex-col space-y-2 items-center justify-center bg-black rounded-md p-5">
+        <div class="text-plain font-extrabold text-2xl">
+          <span>1 USD</span> = <span class="mr-1">₱</span><span id="php">loading</span>
+        </div>
+        <p class="font-medium text-plain text-sm tracking-wider">as of <span id="current-timestamp" class="text-darkerIce
+          "></span></p>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="p-3 bg-blueGrey rounded-md text-plain text-center font-extrabold capitalize text-lg">Wishlist</div>
+
+        <div class="flex flex-col rounded-md p-5 mt-4 bg-lightSlate">
+          <ul class="space-y-4" id="wishlist">
+                  
+          </ul>
+
+          <div class="bg-success addWishItem rounded-full flex self-end items-center justify-center h-14 w-14 p-1 scale-75 hover:bg-successHov hover:cursor-pointer">
+            <i class="addWishItem fa-solid fa-plus text-plain text-[22px]"></i>
+          </div>
+
+        </div>
+        
+      </div>
+
+
+    </div>
+  </div>
+
+  <footer class="mx-auto bg-blueGrey p-4 w-full">
+    <div class="flex justify-center space-x-2 w-full text-plain font-sans font-extrabold text-xl capitalize">
+      <p class="flex items-center space-x-1"><span class="text-sm mr-1">RMFN</span> &copy; <span id="present-date"></span></p>
+    </div>
+  </footer>
+
+  <!-- <div class='fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'>
+    <div class="flex flex-col rounded-xl w-[450px] h-fit bg-plain">
+      <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+        <span class="font-extrabold text-xl">Delete wishlist item</span>
+        <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+      </div>
+      <div class="flex flex-col rounded-b-md bg-plain space-y-10 p-10">
+        
+        <p class="text-sm font-extrabold text-blueText">Are you sure you've obtained this item?</p>
+  
+        <div>
+          <button id="save-btn" class="rounded-md px-10 text-plain py-2 w-full font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">Save</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>  -->
+ 
+</body>
+
+<script src="app.js"></script>
+</html>
