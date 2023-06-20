@@ -1644,7 +1644,7 @@ const App = (function(ItemCtrl, UICtrl, StorageCtrl){
       saveAmount = parseFloat(saveAmount)
       spendAmount = parseFloat(spendAmount)
       // Make sure input fields are not empty
-      if(listName === '' || saveAmount === '' || spendAmount < 0 || spendAmount === '' || saveAmount < 0){
+      if(listName === '' || saveAmount === '' || spendAmount < 0 || saveAmount > 100 || isNaN(saveAmount) || spendAmount > 100 || isNaN(spendAmount) || spendAmount === '' || saveAmount < 0){
         console.log('Don\'t put these values!');
       } else {
         // add list to data structure
