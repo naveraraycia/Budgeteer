@@ -399,7 +399,7 @@ const UICtrl = (function(ItemCtrl){
               <span for="wish-0" class="text-lightBrown text-lg font-medium">${item.name}</span>
               <p class="text-xs text-ice ">${item.description}</p>
             </div>
-            <p class=font-medium text-xl"><span class="text-ice">₱</span><span id="php" class="ml-1 text-lightBrown">${item.price}</span></p>
+            <p class=font-medium text-xl"><span class="text-ice">$</span><span id="php" class="ml-1 text-lightBrown">${item.price}</span></p>
           </div>
         </li>
         `
@@ -422,7 +422,7 @@ const UICtrl = (function(ItemCtrl){
                   <div class="flex w-full flex-col scale-90 space-y-2">
                     <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 bg-primary neu scale-90 rounded-lg">
                       <span class="savePercentage mr-1 ">${items.savePercentage}%</span> =
-                      <span class="ml-5">₱</span><span class="saveAmount font-medium ml-1"></span>
+                      <span class="ml-5">$</span><span class="saveAmount font-medium ml-1"></span>
                     </div>
                     <div class="flex space-x-3 items-center justify-center">
                       <span class="text-lightBrown text-md font-semibold">Save</span>       
@@ -432,7 +432,7 @@ const UICtrl = (function(ItemCtrl){
                   <div class="flex w-full flex-col scale-90 space-y-2">
                     <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 scale-90 rounded-lg bg-primary neu">
                       <span class="spendPercentage mr-1 ">${items.spendPercentage}%</span> =
-                      <span class="ml-5">₱</span><span class="spendAmount font-medium ml-1"></span>
+                      <span class="ml-5">$</span><span class="spendAmount font-medium ml-1"></span>
                     </div>
                     <div class="flex space-x-3 items-center justify-center">
                       <span class="text-lightBrown text-md font-semibold">Spend</span>           
@@ -455,7 +455,7 @@ const UICtrl = (function(ItemCtrl){
                       <span class="text-ice addIncome text-md font-semibold hover:cursor-pointer">add income</span>
                     </div>
                     <div class="text-2xl">
-                      <span class="text-success mr-1">₱</span><span id="totalIncome-${items.id}" class="text-lightBrown">7600</span>
+                      <span class="text-success mr-1">$</span><span id="totalIncome-${items.id}" class="text-lightBrown">7600</span>
                     </div>
                 </div>
                 </div>
@@ -475,7 +475,7 @@ const UICtrl = (function(ItemCtrl){
                       <span class="text-ice addExpense text-md font-semibold hover:cursor-pointer">add expense</span>
                     </div>
                     <div class="text-2xl">
-                      <span class="text-error mr-1">₱</span><span id="totalExpense-${items.id}" class="text-lightBrown"></span>
+                      <span class="text-error mr-1">$</span><span id="totalExpense-${items.id}" class="text-lightBrown"></span>
                     </div>
                   </div>
                 </div>           
@@ -487,7 +487,7 @@ const UICtrl = (function(ItemCtrl){
               <div class="flex justify-between font-medium text-lightBrown">
                 <span class="font-semibold text-xl">Total Balance</span>
                 <div class="text-2xl">
-                <span class="text-success mr-1">₱</span><span id="totalBalance-${items.id}"></span>
+                <span class="text-success mr-1">$</span><span id="totalBalance-${items.id}"></span>
                 </div>
               </div>
               </div>
@@ -508,7 +508,7 @@ const UICtrl = (function(ItemCtrl){
               <li id="income-${incomeItem.id}" class="incomeListItem flex justify-between font-medium text-lightBrown">
                 <span>${incomeItem.title}</span>
                 <div class="flex space-x-3">
-                  <p><span class="text-success">₱</span><span class="text-lightBrown ml-1">${incomeItem.amount}</span></p>
+                  <p><span class="text-success">$</span><span class="text-lightBrown ml-1">${incomeItem.amount}</span></p>
                   <i class="editIncome fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
                 </div>
               </li>
@@ -521,7 +521,7 @@ const UICtrl = (function(ItemCtrl){
               <li id="expense-${expenseItem.id}" class="expenseListItem flex justify-between font-medium text-lightBrown">
                 <span>${expenseItem.title}</span>
                 <div class="flex space-x-3">
-                <p><span class="text-error">₱</span><span class="text-lightBrown ml-1">${expenseItem.amount}</span></p>
+                <p><span class="text-error">$</span><span class="text-lightBrown ml-1">${expenseItem.amount}</span></p>
                   <i class="editExpense fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
                 </div>
               </li>
@@ -552,7 +552,7 @@ const UICtrl = (function(ItemCtrl){
             <span for="wish-0" class="text-lightBrown text-lg font-medium">${newWishItem.name}</span>
             <p class="text-xs text-ice ">${newWishItem.description}</p>
           </div>
-          <p class="text-ice font-medium text-xl">₱<span id="php" class="ml-1 text-lightBrown">${newWishItem.price}</span></p>
+          <p class="text-ice font-medium text-xl">$<span id="php" class="ml-1 text-lightBrown">${newWishItem.price}</span></p>
         </div>
       `
       // Insert list to <ul>
@@ -573,7 +573,7 @@ const UICtrl = (function(ItemCtrl){
               <div class="flex w-full flex-col scale-90 space-y-2">
                 <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 bg-primary neu scale-90 rounded-lg">
                   <span class="savePercentage mr-1 ">${addedList.savePercentage}%</span> =
-                  <span class="ml-5">₱</span><span class="saveAmount font-medium ml-1">0.00</span>
+                  <span class="ml-5">$</span><span class="saveAmount font-medium ml-1">0.00</span>
                 </div>
                 <div class="flex space-x-3 items-center justify-center">
                   <span class="text-lightBrown text-md font-semibold">Save</span>   
@@ -583,7 +583,7 @@ const UICtrl = (function(ItemCtrl){
               <div class="flex w-full flex-col scale-90 space-y-2">
                 <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 scale-90 rounded-lg bg-primary neu">
                   <span class="spendPercentage mr-1 ">${addedList.spendPercentage}%</span> =
-                  <span class="ml-5">₱</span><span class="spendAmount font-medium ml-1">0.00</span>
+                  <span class="ml-5">$</span><span class="spendAmount font-medium ml-1">0.00</span>
                 </div>
                 <div class="flex space-x-3 items-center justify-center">
                   <span class="text-lightBrown text-md font-semibold">Spend</span>
@@ -606,7 +606,7 @@ const UICtrl = (function(ItemCtrl){
                   <span class="text-ice addIncome text-md font-semibold hover:cursor-pointer">add income</span>
                 </div>
                 <div class="text-2xl">
-                  <span class="text-success mr-1">₱</span><span id="totalIncome-${addedList.id}" class="text-lightBrown">${addedList.totalIncome}</span>
+                  <span class="text-success mr-1">$</span><span id="totalIncome-${addedList.id}" class="text-lightBrown">${addedList.totalIncome}</span>
                 </div>
             </div>
             </div>
@@ -627,7 +627,7 @@ const UICtrl = (function(ItemCtrl){
                   <span class="text-ice addExpense text-md font-semibold hover:cursor-pointer">add expense</span>
                 </div>
                 <div class="text-2xl">
-                  <span class="text-error mr-1">₱</span><span id="totalExpense-${addedList.id}" class="text-lightBrown">${addedList.totalExpense}</span>
+                  <span class="text-error mr-1">$</span><span id="totalExpense-${addedList.id}" class="text-lightBrown">${addedList.totalExpense}</span>
                 </div>
               </div>
             </div>           
@@ -639,7 +639,7 @@ const UICtrl = (function(ItemCtrl){
           <div class="flex justify-between font-medium text-lightBrown">
             <span class="font-extrabold text-xl">Total Balance</span>
             <div class="text-2xl">
-            <span class="text-success mr-1">₱</span><span id="totalBalance-${addedList.id}">${addedList.totalBalance}</span>
+            <span class="text-success mr-1">$</span><span id="totalBalance-${addedList.id}">${addedList.totalBalance}</span>
             </div>
           </div>
           </div>
@@ -717,7 +717,7 @@ const UICtrl = (function(ItemCtrl){
               if(incomeListItem.getAttribute('id') === `income-${updatedIncomeExpenseItem.id}`){
                 // Change textContent
                 incomeListItem.firstElementChild.textContent = updatedIncomeExpenseItem.title
-                incomeListItem.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.textContent = updatedIncomeExpenseItem.amount
+                incomeListItem.firstElementChild.nextElementSibling.firstElementChild.lastElementChild.textContent = updatedIncomeExpenseItem.amount
               }
             })
           } else if(type === 'expense') {
@@ -728,7 +728,7 @@ const UICtrl = (function(ItemCtrl){
               if(expenseListItem.getAttribute('id') === `expense-${updatedIncomeExpenseItem.id}`){
                 // Change textContent
                 expenseListItem.firstElementChild.textContent = updatedIncomeExpenseItem.title
-                expenseListItem.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.textContent = updatedIncomeExpenseItem.amount
+                expenseListItem.firstElementChild.nextElementSibling.firstElementChild.lastElementChild.textContent = updatedIncomeExpenseItem.amount
               }
             })
           }
@@ -774,7 +774,7 @@ const UICtrl = (function(ItemCtrl){
         li.innerHTML = `
           <span>${incomeExpenseItem.title}</span>
           <div class="flex space-x-3">
-            <p class="text-success">₱<span class="text-lightBrown ml-1">${incomeExpenseItem.amount}</span></p>
+            <p class="text-success">$<span class="text-lightBrown ml-1">${incomeExpenseItem.amount}</span></p>
             <i class="editIncome fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
           </div>
         `
@@ -788,7 +788,7 @@ const UICtrl = (function(ItemCtrl){
         li.innerHTML = `
           <span>${incomeExpenseItem.title}</span>
           <div class="flex space-x-3">
-            <p class="text-error">₱<span class="text-lightBrown ml-1">${incomeExpenseItem.amount}</span></p>
+            <p class="text-error">$<span class="text-lightBrown ml-1">${incomeExpenseItem.amount}</span></p>
             <i class="editExpense fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
           </div>
         `
@@ -921,7 +921,7 @@ const UICtrl = (function(ItemCtrl){
       <div class="flex flex-col rounded-xl w-[450px] h-fit bg-plain">
           <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
             <span class="font-extrabold text-xl">${modalTitle}</span>
-            <i class="fa-solidtext-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+            <i class="fa-solid text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
           </div>
           <div class="flex flex-col rounded-b-md bg-offWhite space-y-5 p-10">
             <div class="flex flex-col space-y-1">
@@ -931,8 +931,8 @@ const UICtrl = (function(ItemCtrl){
             <div class="flex flex-col space-y-1">
               <span class="font-extrabold text-lightBrown">${amountField}</span>
               <div class="flex space-x-4 items-center">
-                <span class="text-xl font-extrabold text-lightBrown">₱</span>
-                <input placeholder="15000" type="number" id="income-expense-amount" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
+                <span class="text-xl font-extrabold text-lightBrown">$</span>
+                <input placeholder="0" type="number" id="income-expense-amount" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
               </div>
               <p class="text-sm font-extrabold text-lightBrown">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Amount field</span></p>
             </div>
@@ -1015,8 +1015,8 @@ const UICtrl = (function(ItemCtrl){
             <div class="flex flex-col space-y-1">
               <span class="font-extrabold text-lightBrown">Price</span>
               <div class="flex space-x-4 items-center">
-                <span class="text-xl font-extrabold text-lightBrown">₱</span>
-                <input id="wish-price" placeholder="500" type="number" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none">
+                <span class="text-xl font-extrabold text-lightBrown">$</span>
+                <input id="wish-price" placeholder="0" type="number" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none">
               </div>
             </div>
   
@@ -1054,8 +1054,8 @@ const UICtrl = (function(ItemCtrl){
             <div class="flex flex-col space-y-1">
               <span class="font-extrabold text-lightBrown">${fieldTitle}</span>
               <div class="flex space-x-4 items-center">
-                <span class="text-xl font-extrabold text-lightBrown">₱</span>
-                <input id="income-expense-item-amount" type="number" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
+                <span class="text-xl font-extrabold text-lightBrown">$</span>
+                <input id="income-expense-item-amount" placeholder="0" type="number" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
               </div>
               <p class="text-sm font-extrabold text-lightBrown">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Amount field</span></p>
             </div>
