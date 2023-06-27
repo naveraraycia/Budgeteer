@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .inv-neu {
+    box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px rgba(210, 146, 39, 0.25);
+  }
+  .inner-neu {
+    box-shadow: inset 3px 3px 7px #659862, inset -3px -3px 7px #89ce84;
+  }
+  .neu {
+    box-shadow: 6px 6px 12px rgba(210, 146, 39, 0.25), -6px -6px 12px #ffffff;
+  }
+  .neu-dark {
+    box-shadow: 6px 6px 12px #e0d6c6, -6px -6px 12px #ffffff;
+  }
+}

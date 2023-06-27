@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: ['./*.html'],
   theme: {
     screens: {
@@ -8,20 +9,23 @@ module.exports = {
       lg: '1020px',
       xl: '1440px',
     },
+    purge: [
+      './public/**/*.html',
+      './src/**/*.{js,jsx,ts,tsx,vue}',
+    ],
     extend: {
       colors: {
-        blueGrey: '#324453',
-        blueBg: '#1F2434',
+        creme: '#FEF3E1',
+        offWhite: '#FFFAF1',
+        primary: '#F9AC58',
+        overlay: 'rgba(91,80,63,.46)',
         slateHov: '#183750',
-        lightSlate: '#56626B',
-        ice: '#8BE2FD',
-        darkerIce: '#7CAACE',
-        plain: '#D9D9D9',
+        ice: '#24A0C7',
+        lightBrown: '#605959',
         error: '#F57373',
         errorHov: '#DE5050',
         success: '#77B373',
-        successHov: '#4DAB47',
-        blueText: '#1F5886'
+        successHov: '#4DAB47'
       },
       fontFamily: {
         sans: ['Dosis', 'sans-serif']

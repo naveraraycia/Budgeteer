@@ -391,15 +391,15 @@ const UICtrl = (function(ItemCtrl){
         html += `
         <li id="wishItem-${item.id}" class="flex items-center space-x-5">
           <div class="flex space-x-2">
-            <i class="fa-solid wishRemove fa-xmark text-ice hover:cursor-pointer hover:scale-125"></i>
+            <i class="fa-solid wishRemove fa-xmark text-error hover:cursor-pointer hover:scale-125"></i>
             <i class="fa-solid wishEdit fa-pencil text-xs text-ice hover:cursor-pointer hover:scale-125"></i>
           </div>
           <div class="flex justify-between w-full">
             <div class="flex flex-col space-y-0">
-              <span for="wish-0" class="text-plain text-lg font-medium">${item.name}</span>
+              <span for="wish-0" class="text-lightBrown text-lg font-medium">${item.name}</span>
               <p class="text-xs text-ice ">${item.description}</p>
             </div>
-            <p class="text-ice font-medium text-xl">₱<span id="php" class="ml-1 text-plain">${item.price}</span></p>
+            <p class=font-medium text-xl"><span class="text-ice">₱</span><span id="php" class="ml-1 text-lightBrown">${item.price}</span></p>
           </div>
         </li>
         `
@@ -413,29 +413,29 @@ const UICtrl = (function(ItemCtrl){
         async function loadItemsList(){
           html += `
             <li id="list-${items.id}" class="mainListItem">
-              <div class="p-3 title bg-blueGrey rounded-md text-plain font-sans flex justify-between items-center font-medium capitalize hover:bg-slateHov hover:cursor-pointer transition delay-75 ">
+              <div class=" p-3 title bg-offWhite neu rounded-md text-primary font-sans flex justify-between items-center font-medium capitalize hover:bg-success hover:cursor-pointer transition delay-75 ">
               <span>${items.listName}</span>
               <i class="edit fa-solid fa-pencil text-ice text-xs hover:cursor-pointer mr-2 hover:scale-125 transition delay-75"></i>
               </div>
-              <div class="p-5 flex flex-col space-y-4 rounded-md bg-lightSlate mt-1">
+              <div class="p-5 flex flex-col space-y-4 rounded-md bg-creme neu mt-3">
                 <div class="flex flex-col">
                   <div class="flex w-full flex-col scale-90 space-y-2">
-                    <div class="flex items-center text-2xl font-extrabold justify-center text-plain p-5 bg-blueGrey scale-90 rounded-lg">
+                    <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 bg-primary neu scale-90 rounded-lg">
                       <span class="savePercentage mr-1 ">${items.savePercentage}%</span> =
                       <span class="ml-5">₱</span><span class="saveAmount font-medium ml-1"></span>
                     </div>
                     <div class="flex space-x-3 items-center justify-center">
-                      <span class="text-plain text-md font-semibold">Save</span>       
+                      <span class="text-lightBrown text-md font-semibold">Save</span>       
                       <i class="editSave fa-solid fa-pencil text-ice text-xs hover:scale-125 hover:cursor-pointer"></i>    
                   </div>
                 </div>
                   <div class="flex w-full flex-col scale-90 space-y-2">
-                    <div class="flex items-center text-2xl font-extrabold justify-center text-plain p-5 scale-90 rounded-lg bg-blueGrey">
+                    <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 scale-90 rounded-lg bg-primary neu">
                       <span class="spendPercentage mr-1 ">${items.spendPercentage}%</span> =
                       <span class="ml-5">₱</span><span class="spendAmount font-medium ml-1"></span>
                     </div>
                     <div class="flex space-x-3 items-center justify-center">
-                      <span class="text-plain text-md font-semibold">Spend</span>           
+                      <span class="text-lightBrown text-md font-semibold">Spend</span>           
                       <i class="editSpend fa-solid fa-pencil text-ice text-xs hover:scale-125 hover:cursor-pointer"></i>
                   </div>
                 </div> 
@@ -444,18 +444,18 @@ const UICtrl = (function(ItemCtrl){
               <!-- Income -->
 
               <div class="flex flex-col space-y-4">
-                <div class="p-3 bg-blueGrey rounded-md text-plain text-center font-extrabold capitalize text-lg">Income</div>  
+                <div class="p-3 bg-primary neu rounded-md text-white text-center font-extrabold capitalize text-lg">Income</div>  
                 <div class="flex flex-col space-y-4 px-3">
                   <ul id="incomeList-${items.id}" class="space-y-1"></ul>
                   <div class="flex justify-between">
                     <div class="flex space-x-2 items-center">
                       <div class="bg-success addIncome rounded-full flex items-center justify-center h-7 w-7 p-1 scale-75 hover:bg-successHov hover:cursor-pointer">
-                        <i class="fa-solid addIncome fa-plus text-plain text-xs"></i>
+                        <i class="fa-solid addIncome fa-plus text-white text-xs"></i>
                       </div>
                       <span class="text-ice addIncome text-md font-semibold hover:cursor-pointer">add income</span>
                     </div>
                     <div class="text-2xl">
-                      <span class="text-success mr-1">₱</span><span id="totalIncome-${items.id}" class="text-plain">7600</span>
+                      <span class="text-success mr-1">₱</span><span id="totalIncome-${items.id}" class="text-lightBrown">7600</span>
                     </div>
                 </div>
                 </div>
@@ -464,18 +464,18 @@ const UICtrl = (function(ItemCtrl){
               <!-- Expenses -->
 
               <div class="flex flex-col space-y-4">
-                <div class="p-3 bg-blueGrey rounded-md text-plain text-center font-extrabold capitalize text-lg">Expenses</div>
+                <div class="p-3 bg-primary neu rounded-md text-white text-center font-extrabold capitalize text-lg">Expenses</div>
                 <div class="flex flex-col space-y-4 px-3">
                   <ul id="expenseList-${items.id}" class="space-y-1"></ul>
                   <div class="flex justify-between">
                     <div class="flex space-x-2 items-center">
                       <div class="bg-error addExpense rounded-full flex items-center justify-center h-7 w-7 p-1 scale-75 hover:bg-errorHov hover:cursor-pointer">
-                        <i class="fa-solid addExpense fa-plus text-plain text-xs"></i>
+                        <i class="fa-solid addExpense fa-plus text-white text-xs"></i>
                       </div>
                       <span class="text-ice addExpense text-md font-semibold hover:cursor-pointer">add expense</span>
                     </div>
                     <div class="text-2xl">
-                      <span class="text-error mr-1">₱</span><span id="totalExpense-${items.id}" class="text-plain"></span>
+                      <span class="text-error mr-1">₱</span><span id="totalExpense-${items.id}" class="text-lightBrown"></span>
                     </div>
                   </div>
                 </div>           
@@ -483,9 +483,9 @@ const UICtrl = (function(ItemCtrl){
 
               <!-- Total Balance -->
 
-              <div class="h-3 bg-blueGrey rounded-md"></div>
-              <div class="flex justify-between font-medium text-plain">
-                <span class="font-extrabold text-xl">Total Balance</span>
+              <div class="h-3 bg-primary neu rounded-md"></div>
+              <div class="flex justify-between font-medium text-lightBrown">
+                <span class="font-semibold text-xl">Total Balance</span>
                 <div class="text-2xl">
                 <span class="text-success mr-1">₱</span><span id="totalBalance-${items.id}"></span>
                 </div>
@@ -505,10 +505,10 @@ const UICtrl = (function(ItemCtrl){
           // Loop through income List Items
           items.income.forEach(function(incomeItem){
             incomeItems += `
-              <li id="income-${incomeItem.id}" class="incomeListItem flex justify-between font-medium text-plain">
+              <li id="income-${incomeItem.id}" class="incomeListItem flex justify-between font-medium text-lightBrown">
                 <span>${incomeItem.title}</span>
                 <div class="flex space-x-3">
-                  <p class="text-success">₱<span class="text-plain ml-1">${incomeItem.amount}</span></p>
+                  <p><span class="text-success">₱</span><span class="text-lightBrown ml-1">${incomeItem.amount}</span></p>
                   <i class="editIncome fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
                 </div>
               </li>
@@ -518,10 +518,10 @@ const UICtrl = (function(ItemCtrl){
           // Loop through expense List Items
           items.expense.forEach(function(expenseItem){
             expenseItems += `
-              <li id="expense-${expenseItem.id}" class="expenseListItem flex justify-between font-medium text-plain">
+              <li id="expense-${expenseItem.id}" class="expenseListItem flex justify-between font-medium text-lightBrown">
                 <span>${expenseItem.title}</span>
                 <div class="flex space-x-3">
-                  <p class="text-error">₱<span class="text-plain ml-1">${expenseItem.amount}</span></p>
+                <p><span class="text-error">₱</span><span class="text-lightBrown ml-1">${expenseItem.amount}</span></p>
                   <i class="editExpense fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
                 </div>
               </li>
@@ -544,15 +544,15 @@ const UICtrl = (function(ItemCtrl){
       li.id =  `wishItem-${newWishItem.id}`
       li.innerHTML = `
           <div class="flex space-x-2">
-            <i class="fa-solid wishRemove fa-xmark text-ice hover:cursor-pointer hover:scale-125"></i>
+            <i class="fa-solid wishRemove fa-xmark text-error hover:cursor-pointer hover:scale-125"></i>
             <i class="fa-solid wishEdit fa-pencil text-xs text-ice hover:cursor-pointer hover:scale-125"></i>
         </div>
         <div class="flex justify-between w-full">
           <div class="flex flex-col space-y-0">
-            <span for="wish-0" class="text-plain text-lg font-medium">${newWishItem.name}</span>
+            <span for="wish-0" class="text-lightBrown text-lg font-medium">${newWishItem.name}</span>
             <p class="text-xs text-ice ">${newWishItem.description}</p>
           </div>
-          <p class="text-ice font-medium text-xl">₱<span id="php" class="ml-1 text-plain">${newWishItem.price}</span></p>
+          <p class="text-ice font-medium text-xl">₱<span id="php" class="ml-1 text-lightBrown">${newWishItem.price}</span></p>
         </div>
       `
       // Insert list to <ul>
@@ -564,29 +564,29 @@ const UICtrl = (function(ItemCtrl){
       li.className = "mainListItem"
       li.id = `list-${addedList.id}`
       li.innerHTML = `
-          <div class="p-3 title bg-blueGrey rounded-md text-plain font-sans flex justify-between items-center font-medium capitalize hover:bg-slateHov hover:cursor-pointer transition delay-75 ">
+          <div class=" p-3 title bg-offWhite neu rounded-md text-primary font-sans flex justify-between items-center font-medium capitalize hover:cursor-pointer transition delay-75 ">
           <span>${addedList.listName}</span>
-          <i class="edit fa-solid fa-pencil text-ice text-xs hover:cursor-pointer mr-2 hover:scale-125 transition delay-75"></i>
+          <i class="edit fa-solid  fa-pencil text-ice text-xs hover:cursor-pointer mr-2 hover:scale-125 transition delay-75"></i>
           </div>
-          <div class="p-5 flex flex-col space-y-4 rounded-md bg-lightSlate mt-1">
+          <div class="p-5 flex flex-col space-y-4 rounded-md bg-creme neu mt-3">
             <div class="flex flex-col">
               <div class="flex w-full flex-col scale-90 space-y-2">
-                <div class="flex items-center text-2xl font-extrabold justify-center text-plain p-5 bg-blueGrey scale-90 rounded-lg">
+                <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 bg-primary neu scale-90 rounded-lg">
                   <span class="savePercentage mr-1 ">${addedList.savePercentage}%</span> =
                   <span class="ml-5">₱</span><span class="saveAmount font-medium ml-1">0.00</span>
                 </div>
                 <div class="flex space-x-3 items-center justify-center">
-                  <span class="text-plain text-md font-semibold">Save</span>   
+                  <span class="text-lightBrown text-md font-semibold">Save</span>   
                   <i class="editSave fa-solid fa-pencil text-ice text-xs hover:scale-125 hover:cursor-pointer"></i>
               </div>
             </div>
               <div class="flex w-full flex-col scale-90 space-y-2">
-                <div class="flex items-center text-2xl font-extrabold justify-center text-plain p-5 scale-90 rounded-lg bg-blueGrey">
+                <div class="flex items-center text-2xl font-extrabold justify-center text-white p-5 scale-90 rounded-lg bg-primary neu">
                   <span class="spendPercentage mr-1 ">${addedList.spendPercentage}%</span> =
                   <span class="ml-5">₱</span><span class="spendAmount font-medium ml-1">0.00</span>
                 </div>
                 <div class="flex space-x-3 items-center justify-center">
-                  <span class="text-plain text-md font-semibold">Spend</span>
+                  <span class="text-lightBrown text-md font-semibold">Spend</span>
                   <i class="editSpend fa-solid fa-pencil text-ice text-xs hover:scale-125 hover:cursor-pointer"></i>
               </div>
             </div> 
@@ -595,18 +595,18 @@ const UICtrl = (function(ItemCtrl){
           <!-- Income -->
 
           <div class="flex flex-col space-y-4">
-            <div class="p-3 bg-blueGrey rounded-md text-plain text-center font-extrabold capitalize text-lg">Income</div>
+            <div class="p-3 bg-primary neu rounded-md text-white text-center font-extrabold capitalize text-lg">Income</div>
             <div class="flex flex-col space-y-4 px-3">
               <ul id="incomeList-${addedList.id}" class="space-y-1"></ul>
               <div class="flex justify-between">
                 <div class="flex space-x-2 items-center">
                   <div class="bg-success addIncome rounded-full flex items-center justify-center h-7 w-7 p-1 scale-75 hover:bg-successHov hover:cursor-pointer">
-                    <i class="addIncome fa-solid fa-pencil text-plain text-xs"></i>
+                    <i class="addIncome fa-solid fa-plus text-white text-xs"></i>
                   </div>
                   <span class="text-ice addIncome text-md font-semibold hover:cursor-pointer">add income</span>
                 </div>
                 <div class="text-2xl">
-                  <span class="text-success mr-1">₱</span><span id="totalIncome-${addedList.id}" class="text-plain">${addedList.totalIncome}</span>
+                  <span class="text-success mr-1">₱</span><span id="totalIncome-${addedList.id}" class="text-lightBrown">${addedList.totalIncome}</span>
                 </div>
             </div>
             </div>
@@ -615,19 +615,19 @@ const UICtrl = (function(ItemCtrl){
           <!-- Expenses -->
 
           <div class="flex flex-col space-y-4">
-            <div class="p-3 bg-blueGrey rounded-md text-plain text-center font-extrabold capitalize text-lg">Expenses</div>
+            <div class="p-3 bg-primary neu rounded-md text-white text-center font-extrabold capitalize text-lg">Expenses</div>
             
             <div class="flex flex-col space-y-4 px-3">
               <ul id="expenseList-${addedList.id}" class="space-y-1"></ul>
               <div class="flex justify-between">
                 <div class="flex space-x-2 items-center">
                   <div class="bg-error addExpense rounded-full flex items-center justify-center h-7 w-7 p-1 scale-75 hover:bg-errorHov hover:cursor-pointer">
-                    <i class="fa-solid addExpense fa-pencil text-plain text-xs"></i>
+                    <i class="fa-solid addExpense fa-plus text-white text-xs"></i>
                   </div>
                   <span class="text-ice addExpense text-md font-semibold hover:cursor-pointer">add expense</span>
                 </div>
                 <div class="text-2xl">
-                  <span class="text-error mr-1">₱</span><span id="totalExpense-${addedList.id}" class="text-plain">${addedList.totalExpense}</span>
+                  <span class="text-error mr-1">₱</span><span id="totalExpense-${addedList.id}" class="text-lightBrown">${addedList.totalExpense}</span>
                 </div>
               </div>
             </div>           
@@ -635,8 +635,8 @@ const UICtrl = (function(ItemCtrl){
 
           <!-- Total Balance -->
 
-          <div class="h-3 bg-blueGrey rounded-md"></div>
-          <div class="flex justify-between font-medium text-plain">
+          <div class="h-3 bg-primary neu rounded-md"></div>
+          <div class="flex justify-between font-medium text-lightBrown">
             <span class="font-extrabold text-xl">Total Balance</span>
             <div class="text-2xl">
             <span class="text-success mr-1">₱</span><span id="totalBalance-${addedList.id}">${addedList.totalBalance}</span>
@@ -659,7 +659,7 @@ const UICtrl = (function(ItemCtrl){
       // Update Item Description
       wishItemLi.lastElementChild.firstElementChild.lastElementChild.textContent = updatedWishItem.description
       // Update Item Price
-      wishItemLi.lastElementChild.lastElementChild.firstElementChild.textContent = updatedWishItem.price
+      wishItemLi.lastElementChild.lastElementChild.lastElementChild.textContent = updatedWishItem.price
     },
     updateUIListName: function(updatedItem){
       let listItems = document.querySelectorAll('.mainListItem')
@@ -769,12 +769,12 @@ const UICtrl = (function(ItemCtrl){
       if(type === 'income'){
         // Get the specific income list
         const ul = document.querySelector(`#incomeList-${selectedListID}`)
-        li.className = 'incomeListItem flex justify-between font-medium text-plain'
+        li.className = 'incomeListItem flex justify-between font-medium text-lightBrown'
         li.id = `income-${incomeExpenseItem.id}`
         li.innerHTML = `
           <span>${incomeExpenseItem.title}</span>
           <div class="flex space-x-3">
-            <p class="text-success">₱<span class="text-plain ml-1">${incomeExpenseItem.amount}</span></p>
+            <p class="text-success">₱<span class="text-lightBrown ml-1">${incomeExpenseItem.amount}</span></p>
             <i class="editIncome fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
           </div>
         `
@@ -783,12 +783,12 @@ const UICtrl = (function(ItemCtrl){
       } else if (type === 'expense'){
         // Get the specific income list
         const ul = document.querySelector(`#expenseList-${selectedListID}`)
-        li.className = 'expenseListItem flex justify-between font-medium text-plain'
+        li.className = 'expenseListItem flex justify-between font-medium text-lightBrown'
         li.id = `expense-${incomeExpenseItem.id}`
         li.innerHTML = `
           <span>${incomeExpenseItem.title}</span>
           <div class="flex space-x-3">
-            <p class="text-error">₱<span class="text-plain ml-1">${incomeExpenseItem.amount}</span></p>
+            <p class="text-error">₱<span class="text-lightBrown ml-1">${incomeExpenseItem.amount}</span></p>
             <i class="editExpense fa-solid fa-pencil text-ice text-xs hover:cursor-pointer hover:scale-125"></i>
           </div>
         `
@@ -861,43 +861,43 @@ const UICtrl = (function(ItemCtrl){
     },
     openAddListModal: async function(){
       const modal = document.createElement('div')
-      modal.className = 'fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'
+      modal.className = 'fixed p-5 top-0 left-0 bg-overlay h-[100%] w-[100%] flex justify-center'
       modal.id = 'add-list-modal'
       modal.innerHTML = `
           <div class="flex flex-col rounded-xl w-[450px] h-fit bg-plain">
-            <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+            <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
               <span class="font-extrabold text-xl">Add budget list</span>
-              <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+              <i class="fa-solid text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
             </div>
-            <div class="flex flex-col rounded-b-md bg-plain space-y-10 p-10">
+            <div class="flex flex-col rounded-b-md bg-offWhite space-y-10 p-10">
               <div class="space-y-5">
                 <div class="flex flex-col space-y-1">
-                  <span class="font-extrabold text-blueText">Name</span>
-                  <input placeholder="Budget List" type="text" id="list-name" class="px-5 py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
+                  <span class="font-extrabold text-lightBrown">Name</span>
+                  <input placeholder="Budget List" type="text" id="list-name" class="px-5 py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none focus:border-none border-none" required>
                 </div>
                 <div class="flex justify-between">
                   <div class="flex flex-col space-y-1">
-                    <span class="font-extrabold text-blueText">Amount to save</span>
+                    <span class="font-extrabold text-lightBrown">Amount to save</span>
                     <div class="flex space-x-4 items-center">
-                      <input id="save-amount" placeholder="25" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
-                      <span class="text-xl font-extrabold text-blueText">%</span>
+                      <input id="save-amount" placeholder="25" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
+                      <span class="text-xl font-extrabold text-lightBrown">%</span>
                     </div>
                   </div>
                   <div class="flex flex-col space-y-1">
-                    <span class="font-extrabold text-blueText">Amount to spend</span>
+                    <span class="font-extrabold text-lightBrown">Amount to spend</span>
                     <div class="flex space-x-4 items-center">
-                      <input id="spend-amount" placeholder="75" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
-                      <span class="text-xl font-extrabold text-blueText">%</span>
+                      <input id="spend-amount" placeholder="75" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
+                      <span class="text-xl font-extrabold text-lightBrown">%</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="flex flex-col space-y-3">
-                <p class="text-sm font-medium text-blueText"><span class="font-extrabold">Amount to save:</span> this is the ideal percentage you should save from your total Income.</p>
-                <p class="text-sm font-medium text-blueText"><span class="font-extrabold">Amount to spend:</span> this is the ideal percentage you are allowed to spend from your total Income.</p>
+                <p class="text-sm font-medium text-lightBrown"><span class="font-extrabold">Amount to save:</span> this is the ideal percentage you should save from your total Income.</p>
+                <p class="text-sm font-medium text-lightBrown"><span class="font-extrabold">Amount to spend:</span> this is the ideal percentage you are allowed to spend from your total Income.</p>
               </div>
                 <div>
-                <button id="save-btn" class="rounded-md px-10 text-plain py-2 w-full font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">add</button>
+                <button id="save-btn" class="rounded-md px-10 text-white py-2 w-full font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">add</button>
                 </div>
             </div>
           </div>
@@ -915,29 +915,29 @@ const UICtrl = (function(ItemCtrl){
         amountField = "Expense Amount"
       }
       const modal = document.createElement('div')
-      modal.className = 'fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'
+      modal.className = 'fixed p-5 top-0 left-0 bg-overlay h-[100%] w-[100%] flex justify-center'
       modal.id = 'add-income-expense-item'
       modal.innerHTML = `
       <div class="flex flex-col rounded-xl w-[450px] h-fit bg-plain">
-          <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+          <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
             <span class="font-extrabold text-xl">${modalTitle}</span>
-            <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+            <i class="fa-solidtext-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
           </div>
-          <div class="flex flex-col rounded-b-md bg-plain space-y-5 p-10">
+          <div class="flex flex-col rounded-b-md bg-offWhite space-y-5 p-10">
             <div class="flex flex-col space-y-1">
-              <span class="font-extrabold text-blueText">Name</span>
-              <input placeholder="Item Name" id="income-expense-name" type="text" class="px-5 py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
+              <span class="font-extrabold text-lightBrown">Name</span>
+              <input placeholder="Item Name" id="income-expense-name" type="text" class="px-5 py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
             </div>
             <div class="flex flex-col space-y-1">
-              <span class="font-extrabold text-blueText">${amountField}</span>
+              <span class="font-extrabold text-lightBrown">${amountField}</span>
               <div class="flex space-x-4 items-center">
-                <span class="text-xl font-extrabold text-blueText">₱</span>
-                <input placeholder="15000" type="number" id="income-expense-amount" class="px-5 w-full py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
+                <span class="text-xl font-extrabold text-lightBrown">₱</span>
+                <input placeholder="15000" type="number" id="income-expense-amount" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
               </div>
-              <p class="text-sm font-extrabold text-blueText">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Amount field</span></p>
+              <p class="text-sm font-extrabold text-lightBrown">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Amount field</span></p>
             </div>
             <div>
-              <button id="save-btn" class="rounded-md px-10 text-plain py-2 w-full font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">add</button>
+              <button id="save-btn" class="rounded-md px-10 text-white py-2 w-full font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">add</button>
             </div>      
           </div>
         </div>
@@ -947,21 +947,21 @@ const UICtrl = (function(ItemCtrl){
     },
     openEditSavePercentageModal: async function(){
       const modal = document.createElement('div')
-      modal.className = 'fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'
+      modal.className = 'fixed p-5 top-0 left-0 bg-overlay h-[100%] w-[100%] flex justify-center'
       modal.id = 'save-spend-modal'
       modal.innerHTML = `
-        <div class="flex flex-col rounded-xl w-[350px] h-fit bg-plain">
-        <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+        <div class="flex flex-col rounded-xl w-[350px] h-fit bg-offWhite">
+        <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
           <span class="font-extrabold text-xl">Edit amount to save</span>
-          <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+          <i class="fa-solid text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
         </div>
         <div class="flex flex-col rounded-b-md items-center bg-plain space-y-5 p-10">
           <div class="flex space-x-4 items-center">
-            <input id="save-percentage" required placeholder="25" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none">
-            <span class="text-xl font-extrabold text-blueText">%</span>  
+            <input id="save-percentage" required placeholder="25" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none">
+            <span class="text-xl font-extrabold text-lightBrown">%</span>  
           </div>
           <div>
-            <button id="save-btn" class="rounded-md px-10 w-full text-plain py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
+            <button id="save-btn" class="rounded-md px-10 w-full text-white py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
           </div>
         </div>
       </div>
@@ -971,21 +971,21 @@ const UICtrl = (function(ItemCtrl){
     },
     openEditSpendPercentageModal: async function(modalType){
       const modal = document.createElement('div')
-      modal.className = 'fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'
+      modal.className = 'fixed p-5 top-0 left-0 bg-overlay h-[100%] w-[100%] flex justify-center'
       modal.id = 'save-spend-modal'
       modal.innerHTML = `
-        <div class="flex flex-col rounded-xl w-[350px] h-fit bg-plain">
-        <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+        <div class="flex flex-col rounded-xl w-[350px] h-fit bg-offWhite">
+        <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
           <span class="font-extrabold text-xl">${modalType.title}</span>
-          <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+          <i class="fa-solid text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
         </div>
-        <div class="flex flex-col rounded-b-md items-center bg-plain space-y-5 p-10">
+        <div class="flex flex-col rounded-b-md items-center bg-offWhite space-y-5 p-10">
           <div class="flex space-x-4 items-center">
-            <input id="${modalType.idAttr}" required placeholder="25" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none">
-            <span class="text-xl font-extrabold text-blueText">%</span>
+            <input id="${modalType.idAttr}" required placeholder="25" type="number" class="px-5 w-[100px] py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none">
+            <span class="text-xl font-extrabold text-lightBrown">%</span>
           </div>
           <div>
-            <button id="save-btn" class="rounded-md px-10 w-full text-plain py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
+            <button id="save-btn" class="rounded-md px-10 w-full text-white py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
           </div>
         </div>
       </div>
@@ -995,40 +995,40 @@ const UICtrl = (function(ItemCtrl){
     },
     openEditAddWishItemModal: async function(modalTitle){
       const modal = document.createElement('div')
-      modal.className = 'fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'
+      modal.className = 'fixed p-5 top-0 left-0 bg-overlay h-[100%] w-[100%] flex justify-center'
       modal.id = 'wish-modal'
       modal.innerHTML = `
       <div class="flex flex-col rounded-xl w-[450px] h-fit bg-plain">
-      <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+      <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
         <span class="font-extrabold text-xl">${modalTitle}</span>
-        <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+        <i class="fa-solid text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
       </div>
-      <div class="flex flex-col rounded-b-md bg-plain space-y-10 p-10">
+      <div class="flex flex-col rounded-b-md bg-offWhite space-y-10 p-10">
         <div class="space-y-5">
   
           <div class="flex flex-col space-y-1">
-            <span class="font-extrabold text-blueText">Name</span>
-            <input placeholder="Item" type="text" id="wish-name" class="px-5 py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none">
+            <span class="font-extrabold text-lightBrown">Name</span>
+            <input placeholder="Item" type="text" id="wish-name" class="px-5 py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none">
           </div>
           
        
             <div class="flex flex-col space-y-1">
-              <span class="font-extrabold text-blueText">Price</span>
+              <span class="font-extrabold text-lightBrown">Price</span>
               <div class="flex space-x-4 items-center">
-                <span class="text-xl font-extrabold text-blueText">₱</span>
-                <input id="wish-price" placeholder="500" type="number" class="px-5 w-full py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none">
+                <span class="text-xl font-extrabold text-lightBrown">₱</span>
+                <input id="wish-price" placeholder="500" type="number" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none">
               </div>
             </div>
   
             <div class="flex flex-col space-y-1">
-              <span class="font-extrabold text-blueText">Description (Optional)</span>
-              <textarea id="wish-description" rows="2" class="px-5 w-full py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none"></textarea>
+              <span class="font-extrabold text-lightBrown">Description (Optional)</span>
+              <textarea id="wish-description" rows="2" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none"></textarea>
             </div>
       
         </div>
-        <p class="text-sm font-extrabold text-blueText">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Price field</span></p>
+        <p class="text-sm font-extrabold text-lightBrown">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Price field</span></p>
         <div>
-          <button id="save-btn" class="rounded-md px-10 text-plain py-2 w-full font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">Save</button>
+          <button id="save-btn" class="rounded-md px-10 text-white py-2 w-full font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">Save</button>
         </div>
       </div>
     </div>
@@ -1038,30 +1038,30 @@ const UICtrl = (function(ItemCtrl){
     },
     openEditIncomeExpenseItemModal: async function(modalTitle, fieldTitle){
       const modal = document.createElement('div')
-      modal.className = 'fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'
+      modal.className = 'fixed p-5 top-0 left-0 bg-overlay h-[100%] w-[100%] flex justify-center'
       modal.id = 'income-expense-modal'
       modal.innerHTML = `
         <div class="flex flex-col rounded-xl w-[450px] h-fit bg-plain">
-          <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+          <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
             <span class="font-extrabold text-xl">${modalTitle}</span>
-            <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+            <i class="fa-solid text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
           </div>
-          <div class="flex flex-col rounded-b-md bg-plain space-y-5 p-10">
+          <div class="flex flex-col rounded-b-md bg-offWhite space-y-5 p-10">
             <div class="flex flex-col space-y-1">
-              <span class="font-extrabold text-blueText">Name</span>
-              <input id="income-expense-item-title" type="text" class="px-5 py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
+              <span class="font-extrabold text-lightBrown">Name</span>
+              <input id="income-expense-item-title" type="text" class="px-5 py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
             </div>  
             <div class="flex flex-col space-y-1">
-              <span class="font-extrabold text-blueText">${fieldTitle}</span>
+              <span class="font-extrabold text-lightBrown">${fieldTitle}</span>
               <div class="flex space-x-4 items-center">
-                <span class="text-xl font-extrabold text-blueText">₱</span>
-                <input id="income-expense-item-amount" type="number" class="px-5 w-full py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
+                <span class="text-xl font-extrabold text-lightBrown">₱</span>
+                <input id="income-expense-item-amount" type="number" class="px-5 w-full py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
               </div>
-              <p class="text-sm font-extrabold text-blueText">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Amount field</span></p>
+              <p class="text-sm font-extrabold text-lightBrown">Note:<span class="ml-4 font-medium">Do not put commas, spaces, or dashes on the Amount field</span></p>
             </div>
             <div class="flex space-x-4">
-              <button id="save-btn" class="rounded-md px-10 text-plain py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
-              <button id="delete-income-expense-item" class="rounded-md px-10 text-plain py-2 font-extrabold uppercase text-md bg-error hover:bg-errorHov hover:cursor-pointer">delete item</button>
+              <button id="save-btn" class="rounded-md px-10 text-white py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
+              <button id="delete-income-expense-item" class="rounded-md px-10 text-white py-2 font-extrabold uppercase text-md bg-error hover:bg-errorHov hover:cursor-pointer">delete item</button>
             </div>
           </div>
         </div>
@@ -1071,19 +1071,19 @@ const UICtrl = (function(ItemCtrl){
     },
     openEditListNameModal: async function(){
       const modal = document.createElement('div')
-      modal.className = 'fixed p-5 top-0 left-0 bg-blueBg/70 h-[100%] w-[100%] flex justify-center'
+      modal.className = 'fixed p-5 top-0 left-0 bg-overlay h-[100%] w-[100%] flex justify-center'
       modal.id = 'listName-modal'
       modal.innerHTML = `
       <div class="flex flex-col rounded-xl w-[450px] mt-[150px] h-fit bg-plain">
-          <div class="flex bg-slateHov p-5 justify-between text-plain rounded-t-md">
+          <div class="flex bg-primary p-5 justify-between text-white rounded-t-md">
             <span class="font-extrabold text-xl">Edit budget list name</span>
-            <i class="fa-solid text-plain text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
+            <i class="fa-solid text-2xl fa-circle-xmark hover:scale-110 hover:cursor-pointer"></i>
           </div>
-          <div class="flex flex-col rounded-b-md bg-plain space-y-10 p-10">
-            <input id="list-name" placeholder="Budget List" type="text" class="px-5 py-3 rounded-md text-md text-blueText placeholder:text-slateHov/3 focus:outline-none border-none" required>
+          <div class="flex flex-col rounded-b-md bg-offWhite space-y-10 p-10">
+            <input id="list-name" placeholder="Budget List" type="text" class="px-5 py-3 rounded-md text-md text-lightBrown placeholder:text-slateHov/3 focus:outline-none border-none" required>
             <div class="flex space-x-4">
-              <button id="save-btn" class="rounded-md px-10 text-plain py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
-              <button id="delete-main-list" class="rounded-md px-10 text-plain py-2 font-extrabold uppercase text-md bg-error hover:bg-errorHov hover:cursor-pointer">delete list</button>
+              <button id="save-btn" class="rounded-md px-10 text-white py-2 font-extrabold uppercase text-md bg-success hover:bg-successHov hover:cursor-pointer">save</button>
+              <button id="delete-main-list" class="rounded-md px-10 text-white py-2 font-extrabold uppercase text-md bg-error hover:bg-errorHov hover:cursor-pointer">delete list</button>
             </div>
           </div>
         </div>
